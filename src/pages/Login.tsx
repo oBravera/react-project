@@ -9,10 +9,13 @@ import { green } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from 'react-router-dom';
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
+  const navigate = useNavigate();
+  const handleClick = () => navigate('/react-project/ordem');
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const log = new FormData(event.currentTarget);
@@ -70,6 +73,7 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
+              onClick={handleClick}
               sx={{ mt: 3, mb: 2 }}
             >
               Acessar
