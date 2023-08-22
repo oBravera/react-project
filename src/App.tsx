@@ -19,7 +19,7 @@ function App() {
     <Router>
       <CssBaseline />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/react-project/" element={<Login />} />
         <Route path="/react-project/login" element={<Login />} />
         <Route path="/react-project/ordem" element={<Ordem />} />
         <Route path="/gerenciamento" element={<ContentManagement />} />
