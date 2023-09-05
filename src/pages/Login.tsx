@@ -8,14 +8,31 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import { green } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from 'react-router-dom';
+
+function Copyright(props: any) {
+  return (
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      <Link color="inherit" href="https://mui.com/"></Link> &copy; Br Inv. -
+      2023
+      {"."}
+    </Typography>
+  );
+}
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const handleClick = () => navigate('/react-project/ordem');
+  const handleClick = () => navigate('/react-project/home');
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const log = new FormData(event.currentTarget);
@@ -54,7 +71,7 @@ export default function SignIn() {
               required
               fullWidth
               id="usuario"
-              label="Usuário"
+              label="Email"
               name="usuario"
               autoComplete="usuario"
               autoFocus
@@ -63,10 +80,10 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
-              name="senha"
+              name="password"
               label="Senha"
-              type="senha"
-              id="senha"
+              type="password"
+              id="password"
               autoComplete="current-senha"
             />
             <Button
@@ -76,8 +93,16 @@ export default function SignIn() {
               onClick={handleClick}
               sx={{ mt: 3, mb: 2 }}
             >
-              Acessar
+              Entrar
             </Button>
+            <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Esqueceu a senha?
+                  </Link>
+                </Grid>
+              </Grid>
+              <Copyright sx={{ mt: 5 }} />
           </Box>
         </Box>
       </Container>

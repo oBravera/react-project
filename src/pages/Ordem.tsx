@@ -9,6 +9,8 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
 
 export default function Ordem() {
   const [serv, setServ] = React.useState("");
@@ -23,6 +25,13 @@ export default function Ordem() {
   ];
   return (
     <React.Fragment>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Cadastro de Chamados
+          </Typography>
+        </Toolbar>
+      </AppBar>
       <Paper elevation={3} sx={{ marginRight: "15%", marginLeft: "15%" }}>
         <Box sx={{ padding: 5 }}>
           <Typography variant="h6" gutterBottom sx={{ paddingBottom: 5 }}>

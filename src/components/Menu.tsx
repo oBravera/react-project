@@ -7,13 +7,11 @@ import MenuItems from "./MenuItems";
 export default function Menu() {
   return (
     <Box sx={{ flexGrow: 1 }} marginTop={1} marginBottom={1}>
-      <AppBar position="static" sx={{ backgroundColor: "black" }}>
+      <AppBar position="static" sx={{ flexGrow: 1}}>
         <Toolbar>
           <Container sx={{ flexWrap: "wrap", flexDirection: "row" }}>
-            <MenuItems title="Sobre a empresa" />
-            <MenuItems title="Documentos" />
-            <MenuItems title="Procedimentos" />
-            <MenuItems title="Formulários" />
+            <MenuItems title="Abertura de Chamados" />
+            <MenuItems title="Acompamento de Chamados" />
           </Container>
         </Toolbar>
       </AppBar>
